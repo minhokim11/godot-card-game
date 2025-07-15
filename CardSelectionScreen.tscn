@@ -1,0 +1,90 @@
+[gd_scene load_steps=2 format=3 uid="uid://81au4kxx1ois"]
+
+[ext_resource type="Script" path="res://CardSelectionScreen.gd" id="1_cardsel"]
+
+[node name="CardSelectionScreen" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource("1_cardsel")
+
+[node name="Background" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+color = Color(0.1, 0.1, 0.2, 0.95)
+
+[node name="Title" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -100.0
+offset_top = 30.0
+offset_right = 100.0
+offset_bottom = 56.0
+text = "Choose a Card"
+horizontal_alignment = 1
+
+[node name="CardContainer" type="HBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -400.0
+offset_top = -100.0
+offset_right = 400.0
+offset_bottom = 100.0
+
+[node name="Card1" type="VBoxContainer" parent="CardContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Card1Instance" type="Control" parent="CardContainer/Card1"]
+layout_mode = 2
+custom_minimum_size = Vector2(150, 200)
+
+[node name="Card1Button" type="Button" parent="CardContainer/Card1"]
+layout_mode = 2
+text = "Select"
+
+[node name="Card2" type="VBoxContainer" parent="CardContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Card2Instance" type="Control" parent="CardContainer/Card2"]
+layout_mode = 2
+custom_minimum_size = Vector2(150, 200)
+
+[node name="Card2Button" type="Button" parent="CardContainer/Card2"]
+layout_mode = 2
+text = "Select"
+
+[node name="Card3" type="VBoxContainer" parent="CardContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Card3Instance" type="Control" parent="CardContainer/Card3"]
+layout_mode = 2
+custom_minimum_size = Vector2(150, 200)
+
+[node name="Card3Button" type="Button" parent="CardContainer/Card3"]
+layout_mode = 2
+text = "Select"
+
+[node name="SkipButton" type="Button" parent="."]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -100.0
+offset_top = -80.0
+offset_right = 100.0
+offset_bottom = -50.0
+text = "Skip" 

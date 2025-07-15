@@ -1,0 +1,161 @@
+[gd_scene load_steps=5 format=3 uid="uid://bvn8x70a00a1b"]
+
+[ext_resource type="Script" path="res://BattleManager.gd" id="1_battlemanager"]
+[ext_resource type="PackedScene" path="res://Enemy.tscn" id="2_enemy"]
+[ext_resource type="PackedScene" path="res://Player.tscn" id="3_player"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_1"]
+font_size = 18
+font_color = Color(1, 1, 1, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_2"]
+font_size = 14
+font_color = Color(1, 0.8, 0.8, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_3"]
+font_size = 16
+font_color = Color(0.8, 0.8, 1, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_4"]
+font_size = 16
+font_color = Color(1, 1, 1, 1)
+
+[node name="Battle" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource("1_battlemanager")
+
+[node name="Background" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+color = Color(0.05, 0.05, 0.1, 1)
+
+[node name="EnemyContainer" type="Control" parent="."]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -100.0
+offset_top = 50.0
+offset_right = 100.0
+offset_bottom = 200.0
+
+[node name="Enemy" parent="EnemyContainer" instance=ExtResource("2_enemy")]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -25.0
+offset_top = -25.0
+offset_right = 25.0
+offset_bottom = 25.0
+
+[node name="EnemyHealthLabel" type="Label" parent="EnemyContainer"]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -50.0
+offset_top = 10.0
+offset_right = 50.0
+offset_bottom = 36.0
+text = "HP: 50/50"
+horizontal_alignment = 1
+label_settings = SubResource("LabelSettings_1")
+
+[node name="EnemyIntentLabel" type="Label" parent="EnemyContainer"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -50.0
+offset_top = -50.0
+offset_right = 50.0
+offset_bottom = -24.0
+text = "Intent: Attack"
+horizontal_alignment = 1
+label_settings = SubResource("LabelSettings_2")
+
+[node name="PlayerContainer" type="Control" parent="."]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -100.0
+offset_top = -200.0
+offset_right = 100.0
+offset_bottom = -50.0
+
+[node name="Player" parent="PlayerContainer" instance=ExtResource("3_player")]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -25.0
+offset_top = -25.0
+offset_right = 25.0
+offset_bottom = 25.0
+
+[node name="PlayerHealthLabel" type="Label" parent="PlayerContainer"]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -100.0
+offset_top = 10.0
+offset_right = -20.0
+offset_bottom = 36.0
+text = "HP: 100/100"
+label_settings = SubResource("LabelSettings_1")
+
+[node name="PlayerBlockLabel" type="Label" parent="PlayerContainer"]
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -100.0
+offset_top = -36.0
+offset_right = -20.0
+offset_bottom = -10.0
+text = "Block: 0"
+label_settings = SubResource("LabelSettings_3")
+
+[node name="HandContainer" type="Control" parent="."]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -300.0
+offset_top = -150.0
+offset_right = 300.0
+offset_bottom = -50.0
+
+[node name="EndTurnButton" type="Button" parent="."]
+layout_mode = 1
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = -120.0
+offset_top = -25.0
+offset_right = -20.0
+offset_bottom = 25.0
+text = "End Turn"
+label_settings = SubResource("LabelSettings_4")

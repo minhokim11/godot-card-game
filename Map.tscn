@@ -1,0 +1,79 @@
+[gd_scene load_steps=4 format=3 uid="uid://bvn8x70a00a1c"]
+
+[ext_resource type="Script" path="res://MapUI.gd" id="1_mapui"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_1"]
+font_size = 24
+font_color = Color(1, 1, 1, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_2"]
+font_size = 16
+font_color = Color(0.9, 0.9, 0.9, 1)
+
+[node name="Map" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource("1_mapui")
+
+[node name="Background" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+color = Color(0.1, 0.1, 0.2, 1)
+
+[node name="MapContainer" type="Control" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+
+[node name="FloorLabel" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -50.0
+offset_top = 20.0
+offset_right = 50.0
+offset_bottom = 46.0
+text = "Floor 1"
+horizontal_alignment = 1
+label_settings = SubResource("LabelSettings_1")
+
+[node name="PlayerInfo" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -200.0
+offset_top = 20.0
+offset_right = -20.0
+offset_bottom = 160.0
+
+[node name="HealthLabel" type="Label" parent="PlayerInfo"]
+layout_mode = 2
+text = "HP: 100/100"
+label_settings = SubResource("LabelSettings_2")
+
+[node name="GoldLabel" type="Label" parent="PlayerInfo"]
+layout_mode = 2
+text = "Gold: 0"
+label_settings = SubResource("LabelSettings_2")
+
+[node name="DeckSizeLabel" type="Label" parent="PlayerInfo"]
+layout_mode = 2
+text = "Deck: 8 cards"
+label_settings = SubResource("LabelSettings_2")
+
+[node name="RelicLabel" type="Label" parent="PlayerInfo"]
+layout_mode = 2
+text = "Relics: 0"
+label_settings = SubResource("LabelSettings_2")
+
+[node name="PotionLabel" type="Label" parent="PlayerInfo"]
+layout_mode = 2
+text = "Potions: 0"
+label_settings = SubResource("LabelSettings_2") 

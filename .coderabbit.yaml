@@ -1,0 +1,43 @@
+# CodeRabbit 설정 파일
+review:
+  # GDScript 파일도 리뷰 대상에 포함
+  include_files:
+    - "*.gd"
+    - "*.tscn"
+    - "*.tres"
+    - "*.import"
+    - "*.txt"
+    - "*.md"
+  
+  # 제외할 파일들
+  exclude_files:
+    - "*.uid"
+    - ".godot/*"
+    - ".import/*"
+    - "export_presets.cfg"
+  
+  # 리뷰 설정
+  max_file_size: 1000
+  max_files: 50
+  
+  # 언어별 설정
+  languages:
+    gdscript:
+      enabled: true
+      max_lines: 500
+    
+    yaml:
+      enabled: true
+    
+    text:
+      enabled: true
+
+# AI 설정
+ai:
+  model: "gpt-4"
+  temperature: 0.1
+  
+# 알림 설정
+notifications:
+  on_review: true
+  on_comment: true 
